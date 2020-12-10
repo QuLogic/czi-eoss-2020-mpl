@@ -23,6 +23,7 @@ check_requirements()  # noqa: F402
 from title import create_icon_axes
 from timeline import slides as history_slides
 from feature33 import slides as feature33_slides
+from demo import slides as demo_slides
 from end import slides as end_slides
 
 
@@ -35,6 +36,7 @@ PAGES = [
     # Tuple of function + any arguments.
     (history_slides, MPL_PATH, ),
     (feature33_slides, ),
+    (demo_slides, ),
     (end_slides, ),
 ]
 
