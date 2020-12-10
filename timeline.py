@@ -42,7 +42,7 @@ def slides(mpl_path):
     levels = np.tile([-5, 5, -3, 3, -1, 1],
                      int(np.ceil(len(dates) / 6)))[:len(dates)]
 
-    ax = fig.add_axes((0.05, 0.11, 0.9, 0.7))
+    ax = fig.add_axes((0.05, 0.125, 0.9, 0.7))
 
     ax.vlines(dates, 0, levels, color="tab:red", linewidth=3)
     ax.plot(dates, np.zeros_like(dates), "-o",
@@ -68,10 +68,10 @@ def slides(mpl_path):
 
     ax.margins(y=0.1)
 
-    # Annotate range between SciPy 2019 and SciPy 2020.
-    ax.axvspan(datetime(2019, 7, 8), datetime(2020, 7, 6), alpha=0.5)
+    # Annotate range of CZI grant.
+    ax.axvspan(datetime(2020, 3, 1), datetime(2020, 12, 10), alpha=0.5)
 
-    # Only plot the last 5 years before SciPy 2020.
-    ax.set_xlim(datetime(2015, 7, 6), datetime(2020, 7, 6))
+    # Only plot the last 5 years before CZI EOSS 2020.
+    ax.set_xlim(datetime(2015, 12, 10), datetime(2020, 12, 10))
 
     return fig
