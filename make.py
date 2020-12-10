@@ -20,13 +20,9 @@ from mplslide import check_requirements
 # This must be called before importing other files to make the font available.
 check_requirements()  # noqa: F402
 
-from title import create_icon_axes, slides as title_slides
-from news import slides as news_slides
+from title import create_icon_axes
 from timeline import slides as history_slides
-from feature32 import slides as feature32_slides
 from feature33 import slides as feature33_slides
-from docs import slides as docs_slides
-from plan import slides as plan_slides
 from end import slides as end_slides
 
 
@@ -37,13 +33,8 @@ METADATA = {
 MPL_PATH = sys.argv[1]
 PAGES = [
     # Tuple of function + any arguments.
-    (title_slides, ),
-    (news_slides, ),
     (history_slides, MPL_PATH, ),
-    (feature32_slides, ),
     (feature33_slides, ),
-    (docs_slides, ),
-    (plan_slides, ),
     (end_slides, ),
 ]
 
