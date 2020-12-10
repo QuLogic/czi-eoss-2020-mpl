@@ -1,18 +1,18 @@
-Matplotlib Project Update for SciPy 2020
-========================================
+Matplotlib Presentation for CZI EOSS 2020
+=========================================
 
 This repository contains code to create the presentation for the Matplotlib
-project update at SciPy 2020.
+presentation at the CZI EOSS Meeting 2020.
 
 If you want to view the resulting PDF directly, you can [find a generated copy
-in the release](https://github.com/QuLogic/scipy2020-mpl-update/releases).
+in the release](https://github.com/QuLogic/czi-eoss-2020-mpl/releases).
 
 Requirements
 ------------
 
 * Python 3.7+
 * NumPy
-* Matplotlib >= 3.3.0rc1
+* Matplotlib >= 3.4.0
 * A git checkout of the `matplotlib` source code, to produce the timeline.
 * The Carlito font.
 
@@ -20,9 +20,6 @@ Optionally, you may also make available:
 
 * The font to match the Matplotlib logo, Calibri.
 * [`qpdf`](http://qpdf.sourceforge.net/), to linearize the final PDF.
-* Matplotlib built and installed from [this Pull
-  Request](https://github.com/matplotlib/matplotlib/pull/17832), so that the
-  links in the PDF work.
 
 Building
 --------
@@ -34,8 +31,8 @@ $ ./make.py /path/to/matplotlib/checkout
 ```
 
 which will produce `slides.pdf` directly from Matplotlib and
-`scipy2020-mpl-update.pdf` as either a copy or a linearized version, depending
-on whether `qpdf` is installed.
+`czi-eoss-2020-mpl.pdf` as either a copy or a linearized version, depending on
+whether `qpdf` is installed.
 
 Overview
 --------
@@ -47,9 +44,8 @@ individual files.
 
 All slides are produced in the remaining Python files:
 
-* `title.py`: The title page.
-* `news.py`: General news.
 * `timeline.py`: A timeline of releases.
-* `feature32.py`: Feature highlights for Matplotlib 3.2.0.
 * `feature33.py`: Feature highlights for Matplotlib 3.3.0.
-* `plan.py`: Future plans.
+* `feature34.py`: Feature highlights for Matplotlib 3.4.0.
+* `mine.py`: My work.
+* `demo.py`: Demo slide page.
