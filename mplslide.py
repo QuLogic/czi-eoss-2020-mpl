@@ -62,7 +62,7 @@ def check_requirements():
         sys.exit('Calibri or Carlito font must be installed.')
 
 
-def new_slide(plain=False):
+def new_slide(plain=False, **kwargs):
     """
     Create a new slide.
 
@@ -72,7 +72,7 @@ def new_slide(plain=False):
         Whether to leave out any slide decorations (e.g., logo).
     """
 
-    fig = plt.figure(figsize=FIGSIZE, dpi=DPI)
+    fig = plt.figure(figsize=FIGSIZE, dpi=DPI, **kwargs)
     fig.mplslide_props = {'plain': plain}
     return fig
 
