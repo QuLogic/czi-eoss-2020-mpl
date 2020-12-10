@@ -12,6 +12,8 @@ import matplotlib.font_manager
 MPL_BLUE = '#11557c'
 #: The font to use for the Matplotlib logo.
 LOGO_FONT = None
+#: Title colour.
+TITLE_COLOUR = '#ef6c00'
 #: A bullet point.
 BULLET = '$\N{Bullet}$'
 #: The FontProperties to use, Carlito.
@@ -87,7 +89,8 @@ def slide_heading(fig, text):
         The text to place in the heading.
     """
 
-    fig.text(0.05, 0.85, text, color='C0', fontproperties=FONT, fontsize=72)
+    fig.text(0.05, 0.85, text,
+             color=TITLE_COLOUR, fontproperties=FONT, fontsize=72)
 
 
 def annotate_pr_author(fig, *authors, pr=None):

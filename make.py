@@ -14,6 +14,7 @@ import subprocess
 import sys
 
 from matplotlib.backends.backend_pdf import PdfPages
+from matplotlib.patches import Rectangle
 
 from mplslide import check_requirements
 # This must be called before importing other files to make the font available.
@@ -31,7 +32,7 @@ from end import slides as end_slides
 
 METADATA = {
     'Author': 'Elliott Sales de Andrade',
-    'Title': 'Matplotlib Project Update for SciPy 2020',
+    'Title': 'Matplotlib Presentation for CZI EOSS 2020',
 }
 MPL_PATH = sys.argv[1]
 PAGES = [
@@ -55,11 +56,12 @@ with PdfPages('slides.pdf', metadata=METADATA) as pdf:
             if not fig.mplslide_props['plain']:
                 create_icon_axes(fig, (0.825, 0.825, 0.2, 0.15),
                                  0.3, 0.3, 0.3, [5])
+                fig.add_artist(Rectangle((0, 0), 1, 0.02, color='#4db6ac'))
             pdf.savefig(fig)
 
 # Linearize the PDF if qpdf is available.
 if shutil.which('qpdf') is not None:
     subprocess.run(['qpdf', 'slides.pdf', '--object-streams=generate',
-                    '--linearize', 'scipy2020-mpl-update.pdf'])
+                    '--linearize', 'czi-eoss-2020-mpl.pdf'])
 else:
-    shutil.copy('slides.pdf', 'scipy2020-mpl-update.pdf')
+    shutil.copy('slides.pdf', 'czi-eoss-2020-mpl.pdf')
